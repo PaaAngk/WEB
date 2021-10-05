@@ -11,7 +11,7 @@
         [class*="col-auto"] {
             background: rgb(228, 215, 41);  
             height: 200px;
-            flex-basis: 200px;
+            width: 200px;
             margin: 0.5rem;
             padding: 0.5rem;
             flex-shrink: 0;
@@ -19,103 +19,105 @@
     </style>
 </head>
 <body>
-    <div class="row">
-        <div class="col-auto d-flex flex-column align-items-end justify-content-end">
-            <div class="border border-dark m-1 mb-2 p-2">
-                <i class="fas fa-2x fa-dog"></i>
+    <div class="container">
+        <div class="row">
+            <div class="col-auto d-flex flex-column align-items-end justify-content-end">
+                <div class="border border-dark m-1 mb-2 p-2">
+                    <i class="fas fa-2x fa-dog"></i>
+                </div>
+            </div>
+        
+            <div class="col-auto d-flex flex-column align-items-end justify-content-evenly">
+                <div class="border border-dark m-1 mb-2 p-2"  style="">
+                    <i class="fas fa-2x fa-dog"></i>
+                </div>
+            
+                <div class="border border-dark m-1 mb-2 p-2"  style="">
+                    <i class="fas fa-2x fa-kiwi-bird"></i>
+                </div>
+            </div>
+        
+            <div class="col-auto d-flex flex-column align-items-start justify-content-around">
+                <div class="border border-dark m-1 mb-2 p-2"  style="">
+                    <i class="fas fa-2x fa-cat"></i>
+                </div>
+            
+                <div class="border border-dark m-1 mb-2 p-2"  style="">
+                    <i class="fas fa-2x fa-kiwi-bird"></i>
+                </div>
+            </div>
+    
+            <div class="col-auto d-flex flex-column align-items-start justify-content-end"> 
+                <div class="border border-dark m-1 mb-2 p-2" style="">
+                    <i class="fas fa-2x fa-dog"></i>
+                </div>
+            
+                <div class="border border-dark m-1 mb-2 p-2"  style="">
+                    <i class="fas fa-2x fa-cat"></i>
+                </div>
             </div>
         </div>
     
-        <div class="col-auto d-flex flex-column align-items-end justify-content-evenly">
-            <div class="border border-dark m-1 mb-2 p-2"  style="">
-                <i class="fas fa-2x fa-dog"></i>
+        <div class="row">
+            <div class="col-auto d-flex flex-column align-items-end justify-content-evenly">
+                <div class="border border-dark m-1 mb-2 p-2">
+                    <i class="fas fa-2x fa-dog"></i>
+                </div>
+                <div class="border border-dark m-1 mb-2 p-2">
+                    <i class="fas fa-2x fa-cat"></i>
+                </div>
+                <div class="border border-dark m-1 mb-2 p-2">
+                    <i class="fas fa-2x fa-kiwi-bird"></i>
+                </div>
             </div>
-        
-            <div class="border border-dark m-1 mb-2 p-2"  style="">
-                <i class="fas fa-2x fa-kiwi-bird"></i>
+            <div class="col-auto d-flex flex-column justify-content-center align-items-center" style="flex-basis: 416px;">
+                <div class="border border-dark m-1 mb-2 p-2">
+                    <i class="fas fa-2x fa-dog"></i>
+                </div>
+                <div class="border border-dark m-1 mb-2 p-2">
+                    <i class="fas fa-2x fa-cat"></i>
+                </div>
+            </div>
+            <div class="col-auto d-flex flex-column align-items-start justify-content-start" >
+                <div class="border border-dark m-1 mb-2 p-2">
+                    <i class="fas fa-2x fa-dog"></i>
+                </div>
             </div>
         </div>
     
-        <div class="col-auto d-flex flex-column align-items-start justify-content-around">
-            <div class="border border-dark m-1 mb-2 p-2"  style="">
-                <i class="fas fa-2x fa-cat"></i>
+        <div class="row">
+            <div class="col-auto d-flex flex-column align-items-end justify-content-start" >
+                <div class="border border-dark m-1 mb-2 p-2">
+                    <i class="fas fa-2x fa-dog"></i>
+                </div>
             </div>
-        
-            <div class="border border-dark m-1 mb-2 p-2"  style="">
-                <i class="fas fa-2x fa-kiwi-bird"></i>
+            <div class="col-auto d-flex flex-column justify-content-start align-items-stretch" >
+                <div class="border border-dark m-1 mb-2 p-2">
+                    <i class="fas fa-2x fa-dog"></i>
+                </div>
+                <div class="border border-dark m-1 mb-2 p-2">
+                    <i class="fas fa-2x fa-cat"></i>
+                </div>
             </div>
-        </div>
-
-        <div class="col-auto d-flex flex-column align-items-start justify-content-end"> 
-            <div class="border border-dark m-1 mb-2 p-2" style="">
-                <i class="fas fa-2x fa-dog"></i>
+            <div class="col-auto d-flex flex-column align-items-stretch justify-content-between" >
+                <div class="border border-dark m-1 mb-2 p-2"  style=" flex-grow: 1;">
+                    <i class="fas fa-2x fa-dog"></i>
+                </div>
+                <div class="border border-dark m-1 mb-2 p-2" style=" flex-grow: 1;">
+                    <i class="fas fa-2x fa-cat"></i>
+                </div>
+                <div class="border border-dark m-1 mb-2 p-2" style=" flex-grow: 1;">
+                    <i class="fas fa-2x fa-kiwi-bird"></i>
+                </div>
             </div>
-        
-            <div class="border border-dark m-1 mb-2 p-2"  style="">
-                <i class="fas fa-2x fa-cat"></i>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-auto d-flex flex-column align-items-end justify-content-evenly">
-            <div class="border border-dark m-1 mb-2 p-2">
-                <i class="fas fa-2x fa-dog"></i>
-            </div>
-            <div class="border border-dark m-1 mb-2 p-2">
-                <i class="fas fa-2x fa-cat"></i>
-            </div>
-            <div class="border border-dark m-1 mb-2 p-2">
-                <i class="fas fa-2x fa-kiwi-bird"></i>
-            </div>
-        </div>
-        <div class="col-auto d-flex flex-column justify-content-center align-items-center" style="flex-basis: 416px;">
-            <div class="border border-dark m-1 mb-2 p-2">
-                <i class="fas fa-2x fa-dog"></i>
-            </div>
-            <div class="border border-dark m-1 mb-2 p-2">
-                <i class="fas fa-2x fa-cat"></i>
-            </div>
-        </div>
-        <div class="col-auto d-flex flex-column align-items-start justify-content-start" >
-            <div class="border border-dark m-1 mb-2 p-2">
-                <i class="fas fa-2x fa-dog"></i>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-auto d-flex flex-column align-items-end justify-content-start" >
-            <div class="border border-dark m-1 mb-2 p-2">
-                <i class="fas fa-2x fa-dog"></i>
-            </div>
-        </div>
-        <div class="col-auto d-flex flex-column justify-content-start align-items-stretch" >
-            <div class="border border-dark m-1 mb-2 p-2">
-                <i class="fas fa-2x fa-dog"></i>
-            </div>
-            <div class="border border-dark m-1 mb-2 p-2">
-                <i class="fas fa-2x fa-cat"></i>
-            </div>
-        </div>
-        <div class="col-auto d-flex flex-column align-items-stretch justify-content-between" >
-            <div class="border border-dark m-1 mb-2 p-2"  style=" flex-grow: 1;">
-                <i class="fas fa-2x fa-dog"></i>
-            </div>
-            <div class="border border-dark m-1 mb-2 p-2" style=" flex-grow: 1;">
-                <i class="fas fa-2x fa-cat"></i>
-            </div>
-            <div class="border border-dark m-1 mb-2 p-2" style=" flex-grow: 1;">
-                <i class="fas fa-2x fa-kiwi-bird"></i>
-            </div>
-        </div>
-        <div class="col-auto d-flex flex-column justify-content-evenly align-items-stretch" >
-            <div class="border border-dark m-1 mb-2 p-2"  style="">
-                <i class="fas fa-2x fa-cat"></i>
-            </div>
-        
-            <div class="border border-dark m-1 mb-2 p-2"  style="">
-                <i class="fas fa-2x fa-kiwi-bird"></i>
+            <div class="col-auto d-flex flex-column justify-content-evenly align-items-stretch" >
+                <div class="border border-dark m-1 mb-2 p-2"  style="">
+                    <i class="fas fa-2x fa-cat"></i>
+                </div>
+            
+                <div class="border border-dark m-1 mb-2 p-2"  style="">
+                    <i class="fas fa-2x fa-kiwi-bird"></i>
+                </div>
             </div>
         </div>
     </div>
