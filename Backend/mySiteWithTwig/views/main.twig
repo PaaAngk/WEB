@@ -1,56 +1,23 @@
 {% extends "__layout.twig" %}
 {% block content %}
-    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
-        <div class="container">
-            <a class="navbar-brand" href="/"><i class="fas fa-car"></i></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">Главная</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="/Mustang">Ford Mustang</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="/Mark2">Toyota Mark 2</a>
-                </li>
-            </ul>
-            </div>
-        </div>
-    </nav>
+    
     <div class="container">
         <ul class="list-group">
+            {% for items in item %}
             <li class="list-group-item">
                 <ul class="nav nav-pills">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/Mustang">Ford Mustang</a>
+                        <a class="nav-link active" aria-current="page" href="{{items.url_main}}">{{items.title}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Mustang/image">Картинка</a>
+                        <a class="nav-link" href="{{items.url_image}}">Картинка</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="/Mustang/info">Описание</a>
+                        <a class="nav-link " href="{{items.url_info}}">Описание</a>
                     </li>
                 </ul>
             </li>
-
-            <li class="list-group-item">
-                <ul class="nav nav-pills">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/Mark2">Toyota Mark 2</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Mark2/image">Картинка</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="/Mark2/info">Описание</a>
-                    </li>
-                </ul>
-            </li>
-            
+            {% endfor %}
         </ul>
     </div>
 {% endblock %}
