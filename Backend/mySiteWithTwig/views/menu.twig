@@ -1,0 +1,23 @@
+{% extends "__layout.twig" %}
+{% block content %}
+    
+    <div class="container">
+        <ul class="list-group">
+            {% for items in item %}
+                <li class="list-group-item">
+                    <ul class="nav nav-pills">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{{items.url_main}}">{{items.title}}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{items.url_image}}">Картинка</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="{{items.url_info}}">Описание</a>
+                        </li>
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
