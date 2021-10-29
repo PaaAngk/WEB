@@ -1,5 +1,5 @@
 {% extends "__layout.twig" %}
-
+{% import "macros.html" as macros %}
 {% block content %} 
         <div class="container">
             <h1>Это {{title}} </h1>
@@ -9,14 +9,11 @@
         <ul class="list-group">
             <li class="list-group-item">
                 <ul class="nav nav-pills">
-                    <li class="nav-item">
-                        <a class="nav-link {{ active_item.url_main == url ? 'active' }}" aria-current="page" href="{{active_item.url_main}}">{{active_item.title}}</a>
+                    <li class="nav-item">                       
+                        {{ macros.btn('Картинка', '/'~ name~'/image',active_item.url_image == url ? 'active') }}
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ active_item.url_image == url ? 'active' }}" href="{{active_item.url_image}}">Картинка</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ active_item.url_info == url ? 'active' }}" href="{{active_item.url_info}}">Описание</a>
+                        {{macros.btn('Описание', '/'~ name~ '/info',active_item.url_info == url ? 'active' ) }}
                     </li>
                 </ul>
             </li>
@@ -25,3 +22,4 @@
         {% endblock %}
     </div>
 {% endblock %}
+

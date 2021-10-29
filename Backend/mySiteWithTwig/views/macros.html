@@ -1,0 +1,9 @@
+{% macro btn(textInButton, url, active, typeBtn) %} 
+    {% if active == true %}
+        <a  class="btn btn-primary" href="{{url}}">{{textInButton}}</a>
+    {% elseif typeBtn == "warning" %}
+        <a  class="btn btn-warning" href="{{url}}">{{textInButton}}</a> 
+    {% else %} 
+        <a class="btn nav-link" href="{{url}}" >{{textInButton}}</a>
+    {% endif %}
+{% endmacro %}

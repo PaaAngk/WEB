@@ -7,14 +7,15 @@ require_once "../controllers/MustangInfoController.php";
 require_once "../controllers/Mark2Controller.php";
 require_once "../controllers/Mark2ImageController.php";
 require_once "../controllers/Mark2InfoController.php";
+require_once "../controllers/Controller404.php";
 
 $loader = new \Twig\Loader\FilesystemLoader('../views');
 $twig = new \Twig\Environment($loader);
-$url  = $_SERVER["REQUEST_URI"];
+$url  = $_SERVER["REQUEST_URI"];    
 
 $context = [];
+$controller = new Controller404($twig, $url);
 
-$controller = null;
 if ($url == "/") {
     $controller = new MainController($twig, $url);
 } elseif (preg_match("#/Mustang#", $url)) {

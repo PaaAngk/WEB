@@ -1,0 +1,10 @@
+{% import "macros.html" as macros %}
+<li class="nav-item">
+    {{ macros.btn(items.title, items['url_main'],true) }} 
+</li>
+<li class="nav-item">
+    {{ macros.btn('Картинка', items['url_image'],false) }} 
+</li>
+<li class="nav-item">
+    {{ macros.btn('Описание',items['url_info'],false) }} 
+</li>

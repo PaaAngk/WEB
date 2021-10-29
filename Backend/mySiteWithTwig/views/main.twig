@@ -1,6 +1,17 @@
 {% extends "__layout.twig" %}
 {% block content %}
-    
-    {% include '/views/menu.twig' %}
+    <div class="container">
+        <ul class="list-group">
+            {% for items in item %}
+                <li class="list-group-item">
+                    <ul class="nav nav-pills">
+                        {% include('template.html') %}
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+
 {% endblock %}
 
