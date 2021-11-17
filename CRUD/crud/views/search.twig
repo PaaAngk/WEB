@@ -1,0 +1,52 @@
+{% extends "__layout.twig" %}
+{% block content %}
+    <form action="" class="mb-2">
+        <div class="row mb-2">
+            <div class="col-md-3">
+                <label for="inputState" class="form-label">Тип</label>
+                <select id="inputState" class="form-select" name="type">
+                    <option value="">Все</option>
+                    <option value="America">America</option>
+                    <option value="Japan">Japan</option>
+                    <option value="Britain">Britain</option>
+                </select>
+              </div>
+            <div class="col-md-4">
+                <label class="form-label">Название</label>
+                <input type="text" name="title" class="form-control">
+            </div>
+            <div class="col-md-4">
+                <label class="form-label">Описание</label>
+                <input type="text" name="description" class="form-control">
+            </div>
+            <div class="col-md-1 d-flex align-items-end">
+                <button class="btn btn-primary" type="submit">Найти</button>
+            </div>
+            
+        </div>
+       
+    </form>
+
+    <!--<ul class="list-group">
+        {% for object in sobjects %}
+            <li class="list-group-item"><a href="/car-object/{{object.id}}">{{object.title}}</a></li>
+            
+        {% endfor %}
+    </ul>-->
+
+
+    <div class="container">         
+        <div class="d-flex row" >
+            {% for object in sobjects %}
+                <div class="col-md-3 border rounded m-3 text-center bg-light">
+                    <img src="{{object.image}}"  class="img-fluid rounded mb-2 mt-2" alt="">
+                    <a  class="btn btn-primary w-100 " href="/car-object/{{object.id}}">{{object.title}}</a>
+                    <div class="row p-2">
+                        <a  class="btn nav-link col-6" href="/car-object/{{object.id}}?show=image">Картинка</a>
+                        <a  class="btn nav-link col-6" href="/car-object/{{object.id}}?show=info">Описание</a>
+                    </div>   
+                </div>        
+            {% endfor %}
+        </div>   
+    </div>
+{% endblock %}

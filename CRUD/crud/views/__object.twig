@@ -1,0 +1,22 @@
+{% extends "__layout.twig" %}
+{% import "macros.html" as macros %}
+{% block content %} 
+    <div class="container">
+        <h1 class="mb-3">{{description}} </h1>
+        <ul class="list-group mb-2">
+            <li class="list-group-item">
+                <ul class="nav nav-pills">
+                    <li class="nav-item me-2">           
+                        {{ macros.btn('Картинка', '/car-object/'~ id ~'?show=image', type == 'image') }}
+                    </li>
+                    <li class="nav-item">
+                        {{macros.btn('Описание', '/car-object/'~ id ~ '?show=info', type == 'info' ) }}
+                    </li>
+                </ul>
+            </li>
+        </ul>       
+        {% block objectContent %}
+        {% endblock %}
+    </div>
+{% endblock %}
+
