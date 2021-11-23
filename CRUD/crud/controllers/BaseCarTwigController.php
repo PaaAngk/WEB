@@ -5,7 +5,7 @@ class BaseCarTwigController extends TwigBaseController {
     {
         $context = parent::getContext();
 
-        $query = $this->pdo->query("SELECT DISTINCT type FROM car_objects ORDER BY 1");
+        $query = $this->pdo->query("SELECT DISTINCT title FROM type ORDER BY 1");
         $types = $query->fetchAll();
         $context['types'] = $types;
         return $context;

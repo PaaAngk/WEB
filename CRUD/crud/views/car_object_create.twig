@@ -1,16 +1,15 @@
 {% extends "__layout.twig" %}
 
 {% block content %}
-    <h1>Добавление объекта глубокого космоса</h1>
+    <h1>Добавление нового автомобиля</h1>
     <hr>
     {% if message %}
         <div class="alert alert-info" >
             {{message}}
             <a href="/car-object/{{id}}"> открыть созданный объект</a>
         </div>
-       
     {% endif %}
-    <form action="" method="post" class="row g-3">
+    <form action="" enctype="multipart/form-data" method="post"  class="row g-3">
         <div class="col-4">
             <label class="form-label">Название</label>
             <input type="text" class="form-control" name="title">
@@ -22,11 +21,12 @@
         <div class="col-4">
             <label class="form-label">Тип</label>
             <select class="form-control" name="type">
-                <option value="Japan">Japan</option>
-                <option value="America">America</option>
-                <option value="Britain">Britain</option>
+                {% for type  in types  %}
+                    <option value="{{type.title}}">{{type.title}}</option>
+                {% endfor %}
             </select>
-        </div>
+        </div>        
+
         <div class="col-12">
             <textarea name="info" placeholder="Полное описание..." class="form-control" rows="5"></textarea>
         </div>

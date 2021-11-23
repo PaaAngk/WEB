@@ -1,0 +1,26 @@
+{% extends "__layout.twig" %}
+
+{% block content %}
+    <h1>Добавление нового автомобиля</h1>
+    <hr>
+    {% if message %}
+        <div class="alert alert-info" >
+            {{message}}
+            <a href="/type"> открыть созданный объект</a>
+        </div>
+    {% endif %}
+    <form action="" enctype="multipart/form-data" method="post"  class="row g-3">
+        <div class="col-md-3">
+            <label class="form-label">Название</label>
+            <input type="text" class="form-control" name="title">
+        </div>
+        <div class="col-md-8 mb-3">
+            <label for="formFile" class="form-label">Изображение</label>
+            <input class="form-control" type="file" name="image">
+        </div>
+        <div class="col-md-1 mb-3 d-flex justify-content-center align-items-end">
+            <button type="submit" class="btn btn-primary">Добавить</button>
+        </div>
+    </form>
+
+{% endblock %}

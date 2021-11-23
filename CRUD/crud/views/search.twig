@@ -6,9 +6,9 @@
                 <label for="inputState" class="form-label">Тип</label>
                 <select id="inputState" class="form-select" name="type">
                     <option value="">Все</option>
-                    <option value="America">America</option>
-                    <option value="Japan">Japan</option>
-                    <option value="Britain">Britain</option>
+                    {% for type  in types  %}
+                        <option value="{{type.title}}">{{type.title}}</option>
+                    {% endfor %}
                 </select>
               </div>
             <div class="col-md-4">

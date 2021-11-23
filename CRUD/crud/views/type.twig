@@ -1,0 +1,20 @@
+{% extends "__layout.twig" %}
+{% block content %}
+<!--<pre>
+{{ dump(car_objects) }}
+</pre>-->
+    <div class="container-md">         
+        <div class="d-flex row " >
+            {% for object in type_obj %}
+            <div class="col-md-3 mb-3">
+                <div class="border rounded text-center bg-light">
+                    <img src="{{object.image}}"  class="img-fluid rounded mb-2 mt-2" alt="">
+                    <a  class="btn btn-primary w-100 " href="/?type={{object.title}}">{{object.title}}</a>  
+                </div>   
+            </div>     
+            {% endfor %}
+        </div>   
+    </div>
+                    
+{% endblock %}
+

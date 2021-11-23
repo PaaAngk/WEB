@@ -18,14 +18,20 @@
                     </li>
                     {% for type  in types  %}
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="/?type={{ type.type }}">{{ type.type|title }}</a>
+                            <a class="nav-link" aria-current="page" href="/?type={{ type.title }}">{{ type.title|title }}</a>
                         </li>
                     {% endfor %}
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/type">Типы машинок</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="/search">Поиск</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/create">Добавить</a>
+                        <a class="nav-link" aria-current="page" href="/create">Добавить машинку</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/create_type">Добавить тип</a>
                     </li>
                 </ul>
             </div>
