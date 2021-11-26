@@ -1,19 +1,32 @@
 <?php
 require_once "BaseCarTwigController.php";
 
-class CarObjectCreateController extends BaseCarTwigController {
+class CarObjectUpdateController extends BaseCarTwigController {
     public $template = "car_object_create.twig";
-    public function get(array $context) // добавили параметр
+    
+    public function getContext(): array
     {
-        parent::get($context); // пробросили параметр
+        $context = parent::getContext();
+        $id = $this->params['id']; 
+        $sql =<<<EOL
+SELECT * FROM car_objects WHERE id = :id
+EOL; 
+        $query = $this->pdo->prepare($sql);
+        $query->bindValue(":id", $id);
+        $query->execute();
+        $data = $query->fetch();
+        $context['object'] = $data;
+        return $context;
     }
 
-    public function post(array $context) {
-        // получаем значения полей с формы
+    public function post(array $context)    
+    {
+        $context = parent::getContext();
         $title = $_POST['title'];
         $description = $_POST['description'];
         $type = $_POST['type'];
         $info = $_POST['info'];
+        $id = $this->params['id'];
 
         // вытащил значения из $_FILES
         $tmp_name = $_FILES['image']['tmp_name'];
@@ -23,8 +36,8 @@ class CarObjectCreateController extends BaseCarTwigController {
 
         // создаем текст запрос
         $sql = <<<EOL
-INSERT INTO car_objects(title, description, type, info, image)
-VALUES(:title, :description, :type, :info, :image_url)
+UPDATE car_objects SET title = :title, description = :description, type = :type, info = :info, image = :image_url
+WHERE id = :id
 EOL;
 
         // подготавливаем запрос к БД
@@ -35,12 +48,11 @@ EOL;
         $query->bindValue("type", $type);
         $query->bindValue("info", $info);
         $query->bindValue("image_url", $image_url);
-
-        //выполняем запрос
+        $query->bindValue("id", $id);
         $query->execute();
         
-        $context['message'] = 'Вы успешно создали объект';
-        $context['id'] = $this->pdo->lastInsertId(); // получаем id нового добавленного объекта
+        $context['message'] = 'Посмотреть отредактированное машинку';
+        $context['id'] = $id; // получаем id нового добавленного объекта
 
         $this->get($context);
     }

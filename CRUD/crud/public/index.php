@@ -10,6 +10,8 @@ require_once "../controllers/SearchController.php";
 require_once "../controllers/CarObjectCreateController.php";
 require_once "../controllers/TypeObjectCreateController.php";
 require_once "../controllers/TypeShowController.php";
+require_once "../controllers/CarObjectDeleteController.php";
+require_once "../controllers/CarObjectUpdateController.php";
 
 
 $loader = new \Twig\Loader\FilesystemLoader('../views');
@@ -28,5 +30,7 @@ $router->add("/search", SearchController::class);
 $router->add("/create", CarObjectCreateController::class);
 $router->add("/create_type", TypeObjectCreateController::class);
 $router->add("/type", TypeShowController::class);
+$router->add("/car-object/(?P<id>\d+)/delete", CarObjectDeleteController::class);
+$router->add("/car-object/(?P<id>\d+)/edit", CarObjectUpdateController::class);
 
 $router->get_or_default(Controller404::class);

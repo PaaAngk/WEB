@@ -7,11 +7,6 @@ class TwigBaseController extends BaseController {
     public $url = ""; 
     protected \Twig\Environment $twig; // ссылка на экземпляр twig, для рендернига
     
-    //public function __construct($twig, $url)
-    //{
-    //    $this->twig = $twig; // пробрасываем его внутрь
-    //    $this->url = $url; 
-    //}
 
     public function setTwig($twig) {
         $this->twig = $twig;

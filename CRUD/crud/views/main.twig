@@ -4,13 +4,25 @@
 {{ dump(car_objects) }}
 </pre>-->
     <div class="container-md">         
-        <div class="d-flex row " >
+        <div class="row" >
             {% for object in car_objects %}
-            <div class="col-md-3 mb-3">
-                <div class="border rounded text-center bg-light">
-                    <img src="{{object.image}}"  class="img-fluid rounded mb-2 mt-2" alt="">
-                    <a  class="btn btn-primary w-100 " href="/car-object/{{object.id}}">{{object.title}}</a>
-                    <div class="row p-2">
+            <div class="col-lg-3 mb-3">
+                <div class="border p-2 rounded text-center bg-light position-relative">
+                    <div class="position-absolute" style="top:4px; right:4px;">
+                        <form action="/car-object/{{object.id}}/delete" method="post">
+                            <button type="submit" class="btn btn-danger">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="position-absolute" style="top:4px; left:4px;">
+                        <a href="/car-object/{{object.id}}/edit" class="btn btn-info">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                    </div>
+                    <img src="{{object.image}}"  class="img-fluid rounded mb-2" alt="">
+                    <a  class="btn btn-primary w-100 mb-2" href="/car-object/{{object.id}}">{{object.title}}</a>
+                    <div class="d-flex">
                         <a  class="btn nav-link col-6" href="/car-object/{{object.id}}?show=image">Картинка</a>
                         <a  class="btn nav-link col-6" href="/car-object/{{object.id}}?show=info">Описание</a>
                     </div>   
