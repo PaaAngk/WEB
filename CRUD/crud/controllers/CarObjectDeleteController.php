@@ -7,7 +7,7 @@ class CarObjectDeleteController extends BaseController {
 
         $sql =<<<EOL
 DELETE FROM car_objects WHERE id = :id
-EOL; // сформировали запрос
+EOL;
         
         // выполнили
         $query = $this->pdo->prepare($sql);

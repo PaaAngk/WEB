@@ -26,7 +26,6 @@ abstract class BaseController {
         }
     }
 
-
     public function get(array $context) {}
     public function post(array $context) {}
 

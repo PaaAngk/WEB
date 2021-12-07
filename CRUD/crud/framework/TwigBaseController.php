@@ -14,43 +14,9 @@ class TwigBaseController extends BaseController {
     
     public function getContext() : array
     {
-        $menu = [ 
-            [
-                "title" => "Главная",
-                "url" => "/",
-            ],
-            [
-                "title" => "Ford Mustang",
-                "url" => "/Mustang",
-            ],
-            [
-                "title" => "Toyota Mark 2",
-                "url" => "/Mark2",
-            ]
-        ];
-        
-        $item = [ 
-            [
-                "title" => "Ford Mustang",
-                "url_main" => "/Mustang",
-                "url_image" => "/Mustang/image",
-                "url_info" => "/Mustang/info",
-            ],
-            [
-                "title" => "Toyota Mark 2",
-                "url_main" => "/Mark2",
-                "url_image" => "/Mark2/image",
-                "url_info" => "/Mark2/info",
-            ]
-        ];
         $context = parent::getContext(); // вызываем родительский метод
+        $context["messages"] = isset($_SESSION['messages']) ? $_SESSION['messages'] : "";
         $context['title'] = $this->title; // добавляем title в контекст
-        $active_item = array_search($this->title, array_column($item, 'title'));
-
-        $context['menu'] = $menu;
-        $context['item'] = $item;
-        $context['active_item'] = $item[$active_item];
-        $context['url'] = $this->url;
         $query = $this->pdo->query("SELECT * FROM car_objects");
         $context['car_objects'] = $query->fetchAll();
         return $context;

@@ -24,7 +24,6 @@ class ObjectController extends BaseCarTwigController {
                 $context['type'] = 'info';
             }
         }
-        
         return $context;
     }
 
